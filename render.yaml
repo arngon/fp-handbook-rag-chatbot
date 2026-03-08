@@ -4,8 +4,10 @@ services:
     runtime: python
     buildCommand: pip install -r requirements.txt
     startCommand: python app.py
+    healthCheckPath: /
     envVars:
       - key: HF_TOKEN
         sync: false
       - key: GROQ_API_KEY
         sync: false
+    initialDeployHook: "sleep 1"
