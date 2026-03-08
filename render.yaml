@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: fp-handbook-rag-chatbot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: HF_TOKEN
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
